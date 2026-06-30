@@ -1,6 +1,9 @@
-/* ===========================
-   RESET
-=========================== */
+/* ===================================================
+   BUDGET PLANNER
+   Author: Phan Thùy Linh
+=================================================== */
+
+/* RESET */
 
 *{
     margin:0;
@@ -8,41 +11,53 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
 
     font-family:'Poppins',sans-serif;
 
-    background:#f5f7fb;
+    background:#f4f7fb;
 
     color:#333;
 
-    line-height:1.6;
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
 
 }
 
-/* ===========================
-HEADER
-=========================== */
+/* HEADER */
 
 header{
 
-    background:linear-gradient(135deg,#1d4ed8,#2563eb);
+    background:linear-gradient(135deg,#2563eb,#1e40af);
 
     color:white;
 
+    padding:60px 20px;
+
     text-align:center;
 
-    padding:45px 20px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 
 }
 
 header h1{
 
-    font-size:40px;
+    font-size:42px;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
 }
 
@@ -54,23 +69,17 @@ header p{
 
 }
 
-/* ===========================
-MAIN
-=========================== */
+/* MAIN */
 
 main{
 
-    max-width:1100px;
+    margin-top:40px;
 
-    margin:auto;
-
-    padding:35px 20px;
+    margin-bottom:60px;
 
 }
 
-/* ===========================
-CARD
-=========================== */
+/* CARD */
 
 .card{
 
@@ -78,25 +87,25 @@ CARD
 
     border-radius:18px;
 
-    padding:30px;
+    padding:35px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
 
-    margin-bottom:30px;
+    margin-bottom:35px;
 
 }
+
+/* TITLE */
 
 .card h2{
 
     color:#2563eb;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 
 }
 
-/* ===========================
-FORM
-=========================== */
+/* FORM */
 
 .form-group{
 
@@ -104,23 +113,28 @@ FORM
 
     flex-direction:column;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 
 }
 
 label{
 
-    font-weight:600;
-
     margin-bottom:8px;
+
+    font-weight:600;
 
 }
 
-select,input{
+/* INPUT */
+
+input,
+select{
+
+    width:100%;
 
     padding:14px;
 
-    border:1px solid #dcdcdc;
+    border:1px solid #d9d9d9;
 
     border-radius:10px;
 
@@ -130,26 +144,24 @@ select,input{
 
 }
 
-select:focus,
-input:focus{
+input:focus,
+select:focus{
 
     outline:none;
 
     border-color:#2563eb;
 
-    box-shadow:0 0 0 3px rgba(37,99,235,.2);
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
 
 }
 
-/* ===========================
-BUTTON
-=========================== */
+/* BUTTON */
 
 button{
 
     width:100%;
 
-    padding:15px;
+    padding:16px;
 
     background:#2563eb;
 
@@ -159,11 +171,11 @@ button{
 
     border-radius:10px;
 
-    cursor:pointer;
-
     font-size:17px;
 
     font-weight:600;
+
+    cursor:pointer;
 
     transition:.3s;
 
@@ -177,9 +189,7 @@ button:hover{
 
 }
 
-/* ===========================
-RESULT
-=========================== */
+/* RESULT */
 
 #resultSection{
 
@@ -187,17 +197,19 @@ RESULT
 
     border-radius:18px;
 
-    padding:30px;
+    padding:35px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 }
+
+/* WELCOME */
 
 .welcome{
 
     text-align:center;
 
-    padding:50px 20px;
+    padding:40px;
 
 }
 
@@ -215,13 +227,9 @@ RESULT
 
 }
 
-/* ===========================
-FOOTER
-=========================== */
+/* FOOTER */
 
 footer{
-
-    margin-top:50px;
 
     background:#111827;
 
@@ -229,26 +237,6 @@ footer{
 
     text-align:center;
 
-    padding:20px;
-
-}
-
-/* ===========================
-RESPONSIVE
-=========================== */
-
-@media(max-width:768px){
-
-header h1{
-
-font-size:30px;
-
-}
-
-.card{
-
-padding:20px;
-
-}
+    padding:22px;
 
 }
