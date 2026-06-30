@@ -1,259 +1,242 @@
-// ================================
-// BUDGET DATA
-// ================================
-
-const budgetData = {
-
-    // ==========================================
-    // HỌC SINH
-    // ==========================================
-
-    student: {
-
-        title: "Học sinh (11–17 tuổi)",
-
-        note:
-            "Ở độ tuổi này, phần lớn các khoản chi thiết yếu như tiền nhà, điện nước, học phí và sinh hoạt hằng ngày thường do gia đình chi trả. Mục tiêu là học cách quản lý tiền tiêu vặt, tiết kiệm và chi tiêu hợp lý.",
-
-        categories: [
-
-            {
-                name: "Ăn uống",
-                icon: "🍔",
-                percent: 34,
-
-                items: [
-                    "Ăn sáng",
-                    "Ăn vặt",
-                    "Nước uống",
-                    "Trà sữa",
-                    "Đồ ăn cùng bạn bè"
-                ]
-            },
-
-            {
-                name: "Học tập",
-                icon: "📚",
-                percent: 26,
-
-                items: [
-                    "Vở",
-                    "Bút",
-                    "Sách",
-                    "Photo tài liệu",
-                    "Dụng cụ học tập"
-                ]
-            },
-
-            {
-                name: "Tiết kiệm",
-                icon: "💰",
-                percent: 15,
-
-                items: [
-                    "Bỏ ống heo",
-                    "Quỹ dự phòng"
-                ]
-            },
-
-            {
-                name: "Giải trí",
-                icon: "🎮",
-                percent: 10,
-
-                items: [
-                    "Xem phim",
-                    "Game",
-                    "Cafe",
-                    "Đi chơi"
-                ]
-            },
-
-            {
-                name: "Quà tặng",
-                icon: "🎁",
-                percent: 8,
-
-                items: [
-                    "Sinh nhật bạn",
-                    "Hoạt động lớp"
-                ]
-            },
-
-            {
-                name: "Dự phòng",
-                icon: "🛡️",
-                percent: 7,
-
-                items: [
-                    "Chi phí phát sinh"
-                ]
-            }
-
-        ]
-
-    },
-
-    // ==========================================
-    // SINH VIÊN
-    // ==========================================
-
-    university: {
-
-        home: {
-
-            title: "Sinh viên ở cùng gia đình",
-
-            note:
-                "Bạn chưa phải chi trả tiền thuê nhà nên có thể dành tỷ lệ cao hơn cho học tập và tiết kiệm.",
-
-            categories: [
-
-                {
-                    name: "Ăn uống",
-                    icon: "🍚",
-                    percent: 28,
-                    items: [
-                        "Ăn sáng",
-                        "Ăn ngoài",
-                        "Cafe",
-                        "Đồ uống"
-                    ]
-                },
+/* ===================================================
+   BUDGET PLANNER
+   Author: Phan Thùy Linh
+=================================================== */
 
-                {
-                    name: "Học tập",
-                    icon: "📚",
-                    percent: 23,
-                    items: [
-                        "Học phí",
-                        "Giáo trình",
-                        "Khóa học",
-                        "Photo"
-                    ]
-                },
+/* RESET */
 
-                {
-                    name: "Đi lại",
-                    icon: "🛵",
-                    percent: 12,
-                    items: [
-                        "Xăng xe",
-                        "Gửi xe",
-                        "Xe buýt"
-                    ]
-                },
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-                {
-                    name: "Tiết kiệm",
-                    icon: "💰",
-                    percent: 18,
-                    items: [
-                        "Quỹ khẩn cấp",
-                        "Tiết kiệm"
-                    ]
-                },
+html{
+    scroll-behavior:smooth;
+}
 
-                {
-                    name: "Giải trí",
-                    icon: "🎬",
-                    percent: 10,
-                    items: [
-                        "Xem phim",
-                        "Du lịch",
-                        "Cafe"
-                    ]
-                },
+body{
 
-                {
-                    name: "Mua sắm",
-                    icon: "🛍️",
-                    percent: 9,
-                    items: [
-                        "Quần áo",
-                        "Mỹ phẩm",
-                        "Phụ kiện"
-                    ]
-                }
+    font-family:'Poppins',sans-serif;
 
-            ]
+    background:#f4f7fb;
 
-        },
+    color:#333;
 
-        dorm: {
+}
 
-            title: "Sinh viên ở ký túc xá",
+/* CONTAINER */
 
-            note:
-                "Chi phí chỗ ở thấp hơn thuê trọ nhưng vẫn cần dành ngân sách cho sinh hoạt hằng tháng.",
+.container{
 
-            categories: []
+    width:90%;
 
-        },
+    max-width:1200px;
 
-        rent: {
+    margin:auto;
 
-            title: "Sinh viên thuê trọ",
+}
 
-            note:
-                "Tiền thuê phòng, điện nước và ăn uống là các khoản cần ưu tiên hàng đầu.",
+/* HEADER */
 
-            categories: []
+header{
 
-        }
+    background:linear-gradient(135deg,#2563eb,#1e40af);
 
-    },
+    color:white;
 
-    // ==========================================
-    // NGƯỜI ĐI LÀM
-    // ==========================================
+    padding:60px 20px;
 
-    worker: {
+    text-align:center;
 
-        income: {
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 
-            low: {
+}
 
-                title: "Thu nhập dưới 5 triệu",
+header h1{
 
-                categories: []
+    font-size:42px;
 
-            },
+    margin-bottom:10px;
 
-            medium: {
+}
 
-                title: "Thu nhập 5–10 triệu",
+header p{
 
-                categories: []
+    font-size:18px;
 
-            },
+    opacity:.95;
 
-            high: {
+}
 
-                title: "Thu nhập 10–20 triệu",
+/* MAIN */
 
-                categories: []
+main{
 
-            },
+    margin-top:40px;
 
-            higher: {
+    margin-bottom:60px;
 
-                title: "Thu nhập 20–35 triệu",
+}
 
-                categories: []
+/* CARD */
 
-            },
+.card{
 
-            rich: {
+    background:white;
 
-                title: "Thu nhập trên 35 triệu",
+    border-radius:18px;
 
-                categories: []
+    padding:35px;
 
-            }
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
 
-        }
+    margin-bottom:35px;
 
-    }
+}
 
-};
+/* TITLE */
+
+.card h2{
+
+    color:#2563eb;
+
+    margin-bottom:25px;
+
+}
+
+/* FORM */
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:22px;
+
+}
+
+label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+/* INPUT */
+
+input,
+select{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #d9d9d9;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+input:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+/* BUTTON */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* RESULT */
+
+#resultSection{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+/* WELCOME */
+
+.welcome{
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.welcome h2{
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.welcome p{
+
+    color:#666;
+
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:22px;
+
+}
