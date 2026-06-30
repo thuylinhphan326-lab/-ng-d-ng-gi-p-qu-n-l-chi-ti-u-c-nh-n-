@@ -1,83 +1,140 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Budget Planner</title>
+    <title>Budget Planner - Quản lý chi tiêu cá nhân</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<header>
+    <!-- HEADER -->
+    <header>
 
-    <h1>💰 Budget Planner</h1>
+        <div class="container">
 
-    <p>
-        Lập kế hoạch chi tiêu phù hợp với độ tuổi,
-        hoàn cảnh và thu nhập của bạn.
-    </p>
+            <h1>💰 Budget Planner</h1>
 
-</header>
+            <p>
+                Quản lý chi tiêu thông minh theo độ tuổi, hoàn cảnh và thu nhập
+            </p>
 
-<main>
+        </div>
 
-<section class="card">
+    </header>
 
-<h2>Thông tin cá nhân</h2>
+    <!-- MAIN -->
+    <main class="container">
 
-<label>
+        <div class="card">
 
-Bạn thuộc nhóm nào?
+            <h2>Thông tin cá nhân</h2>
 
-</label>
+            <!-- Đối tượng -->
+            <div class="form-group">
 
-<select id="ageGroup">
+                <label for="userType">
 
-<option value="">-- Chọn --</option>
+                    Bạn thuộc nhóm nào?
 
-<option value="student">11–17 tuổi (Học sinh)</option>
+                </label>
 
-<option value="college">18–22 tuổi (Sinh viên)</option>
+                <select id="userType">
 
-<option value="adult">23 tuổi trở lên</option>
+                    <option value="">-- Chọn đối tượng --</option>
 
-</select>
+                    <option value="student">
+                        Học sinh (11–17 tuổi)
+                    </option>
 
-<div id="extraFields">
+                    <option value="college">
+                        Sinh viên
+                    </option>
 
-</div>
+                    <option value="worker">
+                        Người đi làm
+                    </option>
 
-<label>
+                </select>
 
-Ngân sách dự kiến mỗi tháng
+            </div>
 
-</label>
+            <!-- Phần hiển thị động -->
+            <div id="dynamicFields"></div>
 
-<input
-type="number"
-id="budget"
-placeholder="Ví dụ: 5000000">
+            <!-- Ngân sách -->
+            <div class="form-group">
 
-<button id="nextBtn">
+                <label for="budget">
 
-Tiếp tục
+                    Ngân sách dự kiến mỗi tháng (VNĐ)
 
-</button>
+                </label>
 
-</section>
+                <input
+                    type="number"
+                    id="budget"
+                    placeholder="Ví dụ: 5000000">
 
-<section id="result">
+            </div>
 
-</section>
+            <!-- Button -->
+            <button id="generateBtn">
 
-</main>
+                📊 Lập kế hoạch chi tiêu
 
-<script src="data.js"></script>
+            </button>
 
-<script src="script.js"></script>
+        </div>
+
+        <!-- Kết quả -->
+
+        <section id="resultSection">
+
+            <div class="welcome">
+
+                <h2>👋 Chào mừng bạn!</h2>
+
+                <p>
+
+                    Hãy chọn đối tượng và nhập ngân sách để nhận kế hoạch chi tiêu phù hợp.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Budget Planner | Developed by Phan Thùy Linh
+
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="data.js"></script>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
