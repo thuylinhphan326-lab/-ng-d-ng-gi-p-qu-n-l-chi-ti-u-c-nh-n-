@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Budget Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>💰 Budget Planner</h1>
+
+    <p>
+        Lập kế hoạch chi tiêu phù hợp với độ tuổi,
+        hoàn cảnh và thu nhập của bạn.
+    </p>
+
+</header>
+
+<main>
+
+<section class="card">
+
+<h2>Thông tin cá nhân</h2>
+
+<label>
+
+Bạn thuộc nhóm nào?
+
+</label>
+
+<select id="ageGroup">
+
+<option value="">-- Chọn --</option>
+
+<option value="student">11–17 tuổi (Học sinh)</option>
+
+<option value="college">18–22 tuổi (Sinh viên)</option>
+
+<option value="adult">23 tuổi trở lên</option>
+
+</select>
+
+<div id="extraFields">
+
+</div>
+
+<label>
+
+Ngân sách dự kiến mỗi tháng
+
+</label>
+
+<input
+type="number"
+id="budget"
+placeholder="Ví dụ: 5000000">
+
+<button id="nextBtn">
+
+Tiếp tục
+
+</button>
+
+</section>
+
+<section id="result">
+
+</section>
+
+</main>
+
+<script src="data.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
