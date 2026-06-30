@@ -1,378 +1,273 @@
-// ============================================
-// BUDGET PLANNER DATA
-// ============================================
-
-const budgetData = {
-
-    // =========================================
-    // HỌC SINH (11 - 17 TUỔI)
-    // =========================================
-
-    student: {
-
-        title: "Học sinh (11–17 tuổi)",
-
-        description:
-            "Đây là độ tuổi phần lớn các khoản chi thiết yếu đã được gia đình hỗ trợ. Người dùng chủ yếu quản lý tiền tiêu vặt, hình thành thói quen tiết kiệm và chi tiêu hợp lý.",
-
-        recommendation:
-            "Không nên tiêu hết tiền tiêu vặt mỗi tháng. Hãy dành ít nhất 15% để tiết kiệm.",
-
-        categories: [
-
-            {
-                id: "food",
-                name: "Ăn uống",
-                icon: "🍔",
-                percent: 32,
-
-                items: [
-                    "Ăn sáng",
-                    "Ăn vặt",
-                    "Nước uống",
-                    "Trà sữa",
-                    "Đi ăn cùng bạn"
-                ]
-            },
-
-            {
-                id: "study",
-                name: "Học tập",
-                icon: "📚",
-                percent: 24,
-
-                items: [
-                    "Vở",
-                    "Bút",
-                    "Sách",
-                    "Photo tài liệu",
-                    "Dụng cụ học tập"
-                ]
-            },
-
-            {
-                id: "saving",
-                name: "Tiết kiệm",
-                icon: "💰",
-                percent: 16,
-
-                items: [
-                    "Ống heo",
-                    "Quỹ dự phòng nhỏ"
-                ]
-            },
-
-            {
-                id: "entertainment",
-                name: "Giải trí",
-                icon: "🎮",
-                percent: 11,
-
-                items: [
-                    "Game",
-                    "Xem phim",
-                    "Cafe",
-                    "Đi chơi"
-                ]
-            },
-
-            {
-                id: "gift",
-                name: "Quà tặng",
-                icon: "🎁",
-                percent: 9,
-
-                items: [
-                    "Sinh nhật bạn",
-                    "Hoạt động lớp"
-                ]
-            },
-
-            {
-                id: "other",
-                name: "Dự phòng",
-                icon: "🛡",
-                percent: 8,
-
-                items: [
-                    "Chi phí phát sinh"
-                ]
-            }
-
-        ]
-
-    },
-
-    // =========================================
-    // SINH VIÊN
-    // =========================================
-
-    university: {
-
-        // ==========================
-        // Ở CÙNG GIA ĐÌNH
-        // ==========================
-
-        home: {
-
-            title: "Sinh viên ở cùng gia đình",
-
-            description:
-                "Không mất chi phí thuê nhà nên có thể tập trung cho học tập và tiết kiệm.",
-
-            recommendation:
-                "Nên tận dụng thời gian này để xây dựng quỹ tiết kiệm cá nhân.",
-
-            categories: [
-
-                {
-                    id:"food",
-                    name:"Ăn uống",
-                    icon:"🍜",
-                    percent:28,
-                    items:[
-                        "Ăn sáng",
-                        "Ăn ngoài",
-                        "Cafe",
-                        "Đồ uống"
-                    ]
-                },
-
-                {
-                    id:"study",
-                    name:"Học tập",
-                    icon:"📖",
-                    percent:24,
-                    items:[
-                        "Học phí",
-                        "Giáo trình",
-                        "Khóa học",
-                        "Photo"
-                    ]
-                },
-
-                {
-                    id:"transport",
-                    name:"Đi lại",
-                    icon:"🛵",
-                    percent:12,
-                    items:[
-                        "Xăng",
-                        "Gửi xe",
-                        "Xe buýt"
-                    ]
-                },
-
-                {
-                    id:"saving",
-                    name:"Tiết kiệm",
-                    icon:"💰",
-                    percent:18,
-                    items:[
-                        "Quỹ khẩn cấp",
-                        "Tiết kiệm"
-                    ]
-                },
-
-                {
-                    id:"shopping",
-                    name:"Mua sắm",
-                    icon:"🛍",
-                    percent:10,
-                    items:[
-                        "Quần áo",
-                        "Mỹ phẩm",
-                        "Phụ kiện"
-                    ]
-                },
-
-                {
-                    id:"fun",
-                    name:"Giải trí",
-                    icon:"🎬",
-                    percent:8,
-                    items:[
-                        "Du lịch",
-                        "Cafe",
-                        "Xem phim"
-                    ]
-                }
-
-            ]
-
-        },
-
-        // ==========================
-        // KÝ TÚC XÁ
-        // ==========================
-
-        dorm: {
-
-            title:"Sinh viên ở ký túc xá",
-
-            description:
-                "Chi phí chỗ ở thấp nhưng vẫn cần cân đối điện nước và sinh hoạt.",
-
-            recommendation:
-                "Ưu tiên ăn uống và học tập trước khi dành tiền cho giải trí.",
-
-            categories:[
-
-                {
-                    name:"Tiền phòng",
-                    icon:"🏠",
-                    percent:18,
-                    items:[
-                        "Ký túc xá"
-                    ]
-                },
-
-                {
-                    name:"Ăn uống",
-                    icon:"🍱",
-                    percent:30,
-                    items:[
-                        "Cơm",
-                        "Đồ ăn",
-                        "Đồ uống"
-                    ]
-                },
-
-                {
-                    name:"Học tập",
-                    icon:"📚",
-                    percent:18,
-                    items:[
-                        "Giáo trình",
-                        "Học phí",
-                        "Photo"
-                    ]
-                },
-
-                {
-                    name:"Đi lại",
-                    icon:"🛵",
-                    percent:10,
-                    items:[
-                        "Xe buýt",
-                        "Xăng"
-                    ]
-                },
-
-                {
-                    name:"Tiết kiệm",
-                    icon:"💰",
-                    percent:14,
-                    items:[
-                        "Quỹ khẩn cấp"
-                    ]
-                },
-
-                {
-                    name:"Giải trí",
-                    icon:"🎮",
-                    percent:10,
-                    items:[
-                        "Cafe",
-                        "Phim",
-                        "Đi chơi"
-                    ]
-                }
-
-            ]
-
-        },
-
-        // ==========================
-        // THUÊ TRỌ
-        // ==========================
-
-        rent:{
-
-            title:"Sinh viên thuê trọ",
-
-            description:
-                "Tiền thuê phòng là khoản chi lớn nhất, cần ưu tiên trước các nhu cầu khác.",
-
-            recommendation:
-                "Nên dành ít nhất 10% thu nhập để dự phòng các khoản phát sinh.",
-
-            categories:[
-
-                {
-                    name:"Tiền trọ",
-                    icon:"🏠",
-                    percent:25,
-                    items:[
-                        "Tiền phòng"
-                    ]
-                },
-
-                {
-                    name:"Điện nước",
-                    icon:"💡",
-                    percent:8,
-                    items:[
-                        "Điện",
-                        "Nước",
-                        "Internet"
-                    ]
-                },
-
-                {
-                    name:"Ăn uống",
-                    icon:"🍚",
-                    percent:27,
-                    items:[
-                        "Nấu ăn",
-                        "Ăn ngoài"
-                    ]
-                },
-
-                {
-                    name:"Học tập",
-                    icon:"📚",
-                    percent:15,
-                    items:[
-                        "Giáo trình",
-                        "Khóa học"
-                    ]
-                },
-
-                {
-                    name:"Đi lại",
-                    icon:"🛵",
-                    percent:10,
-                    items:[
-                        "Xăng",
-                        "Xe buýt"
-                    ]
-                },
-
-                {
-                    name:"Tiết kiệm",
-                    icon:"💰",
-                    percent:10,
-                    items:[
-                        "Quỹ dự phòng"
-                    ]
-                },
-
-                {
-                    name:"Giải trí",
-                    icon:"🎬",
-                    percent:5,
-                    items:[
-                        "Cafe",
-                        "Phim"
-                    ]
-                }
-
-            ]
-
-        }
-
-    },
-
-    // Người đi làm sẽ bổ sung ở phần tiếp theo.
-};
+// ==========================================
+// Budget Planner - Script
+// ==========================================
+
+// ====== DOM ======
+const userType = document.getElementById("userType");
+const dynamicFields = document.getElementById("dynamicFields");
+const budgetInput = document.getElementById("budget");
+const generateBtn = document.getElementById("generateBtn");
+const resultSection = document.getElementById("resultSection");
+
+// ==============================
+// Hiển thị các trường động
+// ==============================
+
+userType.addEventListener("change", loadDynamicFields);
+
+function loadDynamicFields() {
+
+    dynamicFields.innerHTML = "";
+
+    const type = userType.value;
+
+    // =====================
+    // Sinh viên
+    // =====================
+
+    if (type === "college") {
+
+        dynamicFields.innerHTML = `
+
+        <div class="form-group">
+
+            <label>Hình thức sinh sống</label>
+
+            <select id="livingType">
+
+                <option value="home">Ở cùng gia đình</option>
+
+                <option value="dorm">Ký túc xá</option>
+
+                <option value="rent">Thuê trọ</option>
+
+            </select>
+
+        </div>
+
+        `;
+
+    }
+
+    // =====================
+    // Người đi làm
+    // =====================
+
+    if (type === "worker") {
+
+        dynamicFields.innerHTML = `
+
+        <div class="form-group">
+
+            <label>Mức thu nhập</label>
+
+            <select id="incomeLevel">
+
+                <option value="low">Dưới 5 triệu</option>
+
+                <option value="medium">5 - 10 triệu</option>
+
+                <option value="high">10 - 20 triệu</option>
+
+                <option value="veryHigh">20 - 35 triệu</option>
+
+                <option value="rich">Trên 35 triệu</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Tình trạng</label>
+
+            <select id="familyStatus">
+
+                <option value="single">Độc thân</option>
+
+                <option value="married">Đã kết hôn</option>
+
+                <option value="children">Có con</option>
+
+            </select>
+
+        </div>
+
+        `;
+
+    }
+
+}
+
+// ==============================
+// Nút lập kế hoạch
+// ==============================
+
+generateBtn.addEventListener("click", generateBudget);
+
+// ==============================
+
+function generateBudget() {
+
+    const budget = Number(budgetInput.value);
+
+    if (!userType.value) {
+
+        alert("Vui lòng chọn đối tượng.");
+
+        return;
+
+    }
+
+    if (budget <= 0) {
+
+        alert("Vui lòng nhập ngân sách.");
+
+        return;
+
+    }
+
+    let data;
+
+    // ======================
+    // Học sinh
+    // ======================
+
+    if (userType.value === "student") {
+
+        data = budgetData.student;
+
+    }
+
+    // ======================
+    // Sinh viên
+    // ======================
+
+    else if (userType.value === "college") {
+
+        const living = document.getElementById("livingType").value;
+
+        data = budgetData.university[living];
+
+    }
+
+    // ======================
+    // Người đi làm
+    // ======================
+
+    else {
+
+        const income = document.getElementById("incomeLevel").value;
+
+        const family = document.getElementById("familyStatus").value;
+
+        data = budgetData.worker[income][family];
+
+    }
+
+    showResult(data, budget);
+
+}
+
+// ==============================
+// Hiển thị kết quả
+// ==============================
+
+function showResult(data, budget) {
+
+    let html = "";
+
+    html += `
+
+    <div class="card">
+
+        <h2>${data.title}</h2>
+
+        <p>${data.description}</p>
+
+        <br>
+
+        <div class="note">
+
+            <strong>💡 Gợi ý</strong>
+
+            <p>${data.recommendation}</p>
+
+        </div>
+
+    </div>
+
+    `;
+
+    html += `<div class="card">`;
+
+    html += `<h2>📊 Phân bổ ngân sách</h2>`;
+
+    data.categories.forEach(category => {
+
+        const money = Math.round(budget * category.percent / 100);
+
+        html += `
+
+        <div class="category-card">
+
+            <div class="category-title">
+
+                <h3>
+
+                    ${category.icon}
+
+                    ${category.name}
+
+                </h3>
+
+                <span class="money">
+
+                    ${money.toLocaleString("vi-VN")} VNĐ
+
+                </span>
+
+            </div>
+
+            <div class="progress">
+
+                <div
+                    class="progress-bar"
+                    style="width:${category.percent}%;">
+                </div>
+
+            </div>
+
+            <p>${category.percent}% ngân sách</p>
+
+            <ul class="item-list">
+
+        `;
+
+        category.items.forEach(item => {
+
+            html += `<li>${item}</li>`;
+
+        });
+
+        html += `
+
+            </ul>
+
+        </div>
+
+        `;
+
+    });
+
+    html += `</div>`;
+
+    resultSection.innerHTML = html;
+
+    resultSection.scrollIntoView({
+
+        behavior: "smooth"
+
+    });
+
+}
